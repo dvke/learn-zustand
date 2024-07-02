@@ -37,6 +37,20 @@
   padding: 2em;
 }
 
+.card > button {
+  margin: 10px;
+}
+
 .read-the-docs {
   color: #888;
+}
+
+.component {
+  border: 1px solid teal;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.component > h1 {
+  font-size: 1.85rem;
 }
