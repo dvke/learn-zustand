@@ -2,12 +2,13 @@ import "./App.css";
 import { useCounterStore } from "./store";
 
 const App = () => {
-  const { count, increaseCount } = useCounterStore();
+  const { count, increment, incrementAsync } = useCounterStore();
   return (
     <>
       <h1>Parent component</h1>
+      <h1>Count : {count}</h1>
       <div className="card">
-        <button onClick={() => increaseCount()}>count is {count}</button>
+        <button onClick={() => incrementAsync()}>increment</button>
       </div>
       <OtherComponent />
     </>
@@ -15,12 +16,11 @@ const App = () => {
 };
 
 const OtherComponent = () => {
-  const { count, resetCount } = useCounterStore();
+  const { decrement } = useCounterStore();
   return (
     <div className="component">
       <p>Child component</p>
-      <h1>Count : {count}</h1>
-      <button onClick={() => resetCount()}>reset count</button>
+      <button onClick={() => decrement()}>decrement</button>
     </div>
   );
 };
